@@ -1,0 +1,208 @@
+@import url('../../.cache/wal/colors-waybar.css');
+
+* {
+    font-size: 15px;
+    font-family: "CodeNewRoman Nerd Font Propo";
+    color: #09b2e6;
+}
+
+window#waybar {
+    all: unset;
+    background: transparent;
+}
+
+/* Серые контейнеры */
+.modules-left {
+    padding: 7px;
+    margin: 10px 0 5px 10px;
+    border-radius: 10px;
+    background: rgba(33, 33, 33, 0.8);
+    border: 1px solid rgba(33, 33, 33, 0.3);
+    box-shadow: 0px 3px 8px rgba(33, 33, 33, 0.3);
+}
+
+.modules-center {
+    padding: 7px;
+    margin: 10px 0 5px 0;
+    border-radius: 10px;
+    background: rgba(33, 33, 33, 0.8);
+    border: 1px solid rgba(33, 33, 33, 0.3);
+    box-shadow: 0px 3px 8px rgba(33, 33, 33, 0.3);
+    min-width: 150px;
+}
+
+.modules-right {
+    padding: 7px;
+    margin: 10px 10px 5px 0;
+    border-radius: 10px;
+    background: rgba(33, 33, 33, 0.8);
+    border: 1px solid rgba(33, 33, 33, 0.3);
+    box-shadow: 0px 3px 8px rgba(33, 33, 33, 0.3);
+}
+
+/* Tooltip */
+tooltip {
+    background: #525252;
+    color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+
+/* Рабочие пространства в черно-белых тонах */
+#workspaces {
+padding: 0px 5px;
+}
+
+#workspaces button {
+all: unset;
+margin: 0px 3px;
+padding: 0px 2px;
+color: transparent;
+background: #525252;
+border-radius: 50%;
+transition: all 0.3s;
+min-width: 15px;
+}
+
+#workspaces button:hover {
+background: #525252;
+}
+
+#workspaces button.active {
+background: #525252;
+border-radius: 10px;
+min-width: 30px;
+}
+
+#workspaces button.active:hover {
+background: #525262;
+}
+
+#workspaces button.empty {
+background: rgba(51, 51, 51, 0.5);
+}
+
+#workspaces button.empty:hover {
+background: rgba(102, 102, 102, 0.7);
+}
+
+#workspaces button.empty.active {
+background: #525252;
+}
+
+#workspaces button.empty.active:hover {
+background: #525252;
+}
+
+/* Общие стили для всех модулей */
+#clock, #custom-pacman, #custom-notification,
+#battery, #cpu, #memory, #temperature,#custom-exit
+#tray {
+padding: 0px 5px;
+transition: all 0.3s ease;
+color: #999999;
+}
+
+
+
+/* Ховер эффекты */
+#clock:hover, #custom-pacman:hover, #custom-notification:hover,
+#battery:hover, #cpu:hover, #memory:hover, #temperature:hover
+{
+    color: #cccccc;
+}
+
+/* Батарея */
+#battery.charging {
+color: #ffffff;
+}
+
+#battery.warning:not(.charging) {
+color: #ffaa00;
+}
+
+#battery.critical:not(.charging) {
+color: #ff4444;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+/* Анимация мигания */
+@keyframes blink {
+    to {
+        opacity: 0.7;
+    }
+}
+
+/* Расширяемая группа */
+#group-expand {
+padding: 0px 5px;
+transition: all 0.3s ease;
+}
+
+#custom-expand {
+padding: 0px 5px;
+color: rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+}
+
+#custom-expand:hover {
+color: rgba(255, 255, 255, 0.7);
+}
+
+#pulseaudio {
+margin-right: 2px;
+padding-left: 1px;
+padding-right: 1px;
+border-radius: 1px;
+transition: none;
+color: #999999;
+/* Фон удален */
+}
+
+#custom-colorpicker {
+padding: 0px 5px;
+}
+
+#custom-endpoint {
+color: transparent;
+text-shadow: 0px 0px 1.5px rgba(255, 255, 255, 0.3);
+}
+
+/* Tray */
+#tray {
+padding: 0px 5px;
+}
+
+/* Стили для сетевых модулей */
+#network, #bluetooth {
+padding: 0px 5px;
+transition: all 0.3s ease;
+color: #999999;
+}
+
+#network.disconnected {
+color: #666666;
+opacity: 0.7;
+}
+
+#bluetooth.disabled {
+color: #666666;
+opacity: 0.7;
+}
+
+#network.connected {
+color: #4CAF50;
+}
+
+#bluetooth.connected {
+color: #4CAF50;
+}
+
+/* Стили для уведомлений */
+#custom-notification {
+padding: 0px 5px;
+}
